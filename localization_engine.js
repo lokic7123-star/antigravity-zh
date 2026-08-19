@@ -88,9 +88,10 @@ function backupAsar(asarPath) {
 // ---------------------------------------------------------------------------
 function buildLocalizationJS() {
   const dict = {};
-  for (const f of ["common.json", "menu.json"]) {
-    const p = path.join(DICT_DIR, f);
-    if (fs.existsSync(p)) Object.assign(dict, readJson(p));
+  for (const f of fs.readdirSync(DICT_DIR).filter((x) => x.endsWith(".json"))) {
+    const data = readJson(path.join(DICT_DIR, f));
+    if (Array.isArray(data)) continue;
+    Object.assign(dict, data);
   }
   const patterns = readJson(path.join(DICT_DIR, "patterns.json"));
 
@@ -98,8 +99,8 @@ function buildLocalizationJS() {
     const re = p.source.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
     if (p.target === null) {
       // 函数型 pattern：按 source 匹配内置逻辑
-      if (/Requesting permission to/.test(p.source)) return `[RegExp("${re}","g"),{fn:"permission"}]`;
-      if (/Gemini \(\(/.test(p.source)) return `[RegExp("${re}","g"),{fn:"gemini"}]`;
+      if (p.source.includes("Requesting permission to")) return `[RegExp("${re}","g"),{fn:"permission"}]`;
+      if (p.source.includes("(High|Medium|Low)")) return `[RegExp("${re}","g"),{fn:"gemini"}]`;
       return `[RegExp("${re}","g"),null]`;
     }
     const t = p.target.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
@@ -170,6 +171,7 @@ function buildLocalizationJS() {
   }
   function translateSubtree(root) {
     if (!root || !root.nodeType) return;
+    if (root.nodeType === Node.ELEMENT_NODE) translateElement(root);
     if (shouldSkip(root)) return;
     if (root.nodeType === Node.TEXT_NODE) {
       var tv = translate(root.nodeValue || '');
@@ -177,7 +179,6 @@ function buildLocalizationJS() {
       return;
     }
     if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_NODE && root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) return;
-    if (root.nodeType === Node.ELEMENT_NODE) translateElement(root);
     var n = root.firstChild;
     while (n) {
       var next = n.nextSibling;
