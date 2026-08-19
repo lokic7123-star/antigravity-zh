@@ -1,0 +1,230 @@
+[
+  {
+    "source": "See all \\((\\d+)\\)",
+    "target": "查看全部 ($1)"
+  },
+  {
+    "source": "(\\d+) agents running",
+    "target": "$1 个代理正在运行"
+  },
+  {
+    "source": "1 agent running",
+    "target": "1 个代理正在运行"
+  },
+  {
+    "source": "^(\\d+)d$",
+    "target": "$1天"
+  },
+  {
+    "source": "^(\\d+)m$",
+    "target": "$1分钟"
+  },
+  {
+    "source": "^(\\d+)s$",
+    "target": "$1秒"
+  },
+  {
+    "source": "Worked for (\\d+)s",
+    "target": "已工作 $1 秒"
+  },
+  {
+    "source": "浏览器 设置",
+    "target": "浏览器设置"
+  },
+  {
+    "source": "浏览器 操作权限",
+    "target": "浏览器操作权限"
+  },
+  {
+    "source": "应用 设置",
+    "target": "应用设置"
+  },
+  {
+    "source": "打开 System Preferences",
+    "target": "打开系统设置"
+  },
+  {
+    "source": "Pinned 对话",
+    "target": "已固定对话"
+  },
+  {
+    "source": "Toggle 侧边栏",
+    "target": "切换侧边栏"
+  },
+  {
+    "source": "Select model, current: (.+)",
+    "target": "选择模型，当前：$1"
+  },
+  {
+    "source": "Outside of 项目",
+    "target": "项目外"
+  },
+  {
+    "source": "应用lication",
+    "target": "应用"
+  },
+  {
+    "source": "自定义ize",
+    "target": "自定义"
+  },
+  {
+    "source": "100\\.0% of the customization budget is available\\.",
+    "target": "自定义预算还剩 100.0%。"
+  },
+  {
+    "source": "(\\d+(?:\\.\\d+)?)% of the customization budget is available\\.",
+    "target": "自定义预算还剩 $1%。"
+  },
+  {
+    "source": "Your Plan: (.+)",
+    "target": "你的套餐：$1"
+  },
+  {
+    "source": "You currently don't have any MCP Servers installed\\. 添加 an MCP server above",
+    "target": "你当前还没有安装任何 MCP 服务器。请在上方添加 MCP 服务器。"
+  },
+  {
+    "source": "了解更多\\.",
+    "target": "了解更多。"
+  },
+  {
+    "source": "Project-Specific 设置",
+    "target": "项目专属设置"
+  },
+  {
+    "source": "Go to 项目",
+    "target": "前往项目"
+  },
+  {
+    "source": "File 权限",
+    "target": "文件权限"
+  },
+  {
+    "source": "Network 权限",
+    "target": "网络权限"
+  },
+  {
+    "source": "Terminal & Tooling 权限",
+    "target": "终端与工具权限"
+  },
+  {
+    "source": "Sort 对话",
+    "target": "排序对话"
+  },
+  {
+    "source": "^No$",
+    "target": "否"
+  },
+  {
+    "source": "^Allow$",
+    "target": "允许"
+  },
+  {
+    "source": "^Deny$",
+    "target": "拒绝"
+  },
+  {
+    "source": "^\\(tell the agent what to do instead\\)$",
+    "target": "（告诉智能体改做什么）"
+  },
+  {
+    "source": "Requesting permission to (read access to this path|write access to this path|reading this URL|executing actions on this URL|running this command|running this command outside the sandbox|using this MCP tool) (.+)",
+    "target": null
+  },
+  {
+    "source": "Agent needs permission to act on (.+)",
+    "target": "智能体需要权限才能操作 $1"
+  },
+  {
+    "source": "Agent needs permission to execute JavaScript on (.+)",
+    "target": "智能体需要权限才能在 $1 上执行 JavaScript"
+  },
+  {
+    "source": "Agent needs permission to execute JavaScript",
+    "target": "智能体需要权限才能执行 JavaScript"
+  },
+  {
+    "source": "Yes, save rule for '([^']+)' when not in a project",
+    "target": "是，并在未处于项目时保存 '$1' 的规则"
+  },
+  {
+    "source": "Yes, save rule for '([^']+)' in this project",
+    "target": "是，并在此项目中保存 '$1' 的规则"
+  },
+  {
+    "source": "Yes, save rule for '([^']+)' in this workspace",
+    "target": "是，并在此工作区保存 '$1' 的规则"
+  },
+  {
+    "source": "Yes, save rule for '([^']+)' globally",
+    "target": "是，并全局保存 '$1' 的规则"
+  },
+  {
+    "source": "Yes, save rule when not in a project",
+    "target": "是，并在未处于项目时保存规则"
+  },
+  {
+    "source": "Yes, save rule in this project",
+    "target": "是，并在此项目中保存规则"
+  },
+  {
+    "source": "Yes, save rule in this workspace",
+    "target": "是，并在此工作区保存规则"
+  },
+  {
+    "source": "Yes, save rule globally",
+    "target": "是，并全局保存规则"
+  },
+  {
+    "source": "Yes, and always allow '([^']+)' when not in a project",
+    "target": "是，并在未处于项目时始终允许 '$1'"
+  },
+  {
+    "source": "Yes, and always allow '([^']+)' in this project",
+    "target": "是，并在此项目中始终允许 '$1'"
+  },
+  {
+    "source": "Yes, and always allow '([^']+)' in this workspace",
+    "target": "是，并在此工作区始终允许 '$1'"
+  },
+  {
+    "source": "Yes, and always allow '([^']+)'",
+    "target": "是，并始终允许 '$1'"
+  },
+  {
+    "source": "Yes, and always allow when not in a project",
+    "target": "是，并在未处于项目时始终允许"
+  },
+  {
+    "source": "Yes, and always allow in this project",
+    "target": "是，并在此项目中始终允许"
+  },
+  {
+    "source": "Yes, and always allow in this workspace",
+    "target": "是，并在此工作区始终允许"
+  },
+  {
+    "source": "Yes, and always allow",
+    "target": "是，并始终允许"
+  },
+  {
+    "source": "Allow (.+)",
+    "target": "允许 $1"
+  },
+  {
+    "source": "Refreshes in (\\d+) hours?, (\\d+) minutes?",
+    "target": "$1 小时 $2 分钟后刷新"
+  },
+  {
+    "source": "\\((Thinking)\\)",
+    "target": "(思考)"
+  },
+  {
+    "source": "Gemini ([^(]+) \\((High|Medium|Low)\\)",
+    "target": null
+  },
+  {
+    "source": "Antigravity has been redesigned to put agents first with new capabilities\\. If you'd still like a code editor, you can download it as a separate app named Antigravity IDE\\.",
+    "target": "Antigravity 已重新设计为智能体优先，并加入了新能力。如果你仍然需要代码编辑器，可以下载名为 Antigravity IDE 的独立应用。"
+  }
+]
