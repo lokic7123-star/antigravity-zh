@@ -1,4 +1,10 @@
-[
+{
+  "_meta": {
+    "source": "kdczyz/antigravity-chinese",
+    "tested_against": ["2.7.0", "2.8.0", "2.8.1"],
+    "last_verified": "2026-08-20"
+  },
+  "patterns": [
   {
     "source": "See all \\((\\d+)\\)",
     "target": "查看全部 ($1)"
@@ -227,4 +233,5 @@
     "source": "Antigravity has been redesigned to put agents first with new capabilities\\. If you'd still like a code editor, you can download it as a separate app named Antigravity IDE\\.",
     "target": "Antigravity 已重新设计为智能体优先，并加入了新能力。如果你仍然需要代码编辑器，可以下载名为 Antigravity IDE 的独立应用。"
   }
-]
+  ]
+}

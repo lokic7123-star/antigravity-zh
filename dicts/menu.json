@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "source": "本项目补充",
+    "tested_against": ["2.7.0", "2.8.0", "2.8.1"],
+    "last_verified": "2026-08-20"
+  },
   "File": "文件",
   "New Window": "新建窗口",
   "New Project": "新建项目",

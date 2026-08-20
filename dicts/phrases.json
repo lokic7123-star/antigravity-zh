@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "source": "本项目补充（短语级词库，覆盖动态技能/插件描述常见句式）",
+    "tested_against": ["2.8.1"],
+    "last_verified": "2026-08-20"
+  },
   "Provides instructions for installing and using": "提供安装和使用…的说明",
   "Provides instructions for": "提供…的说明",
   "Provides a detailed": "提供一份详细的",

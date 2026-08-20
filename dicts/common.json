@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "source": "kdczyz/antigravity-chinese (MIT)",
+    "tested_against": ["2.7.0", "2.8.0", "2.8.1"],
+    "last_verified": "2026-08-20"
+  },
   "New Conversation": "新建对话",
   "Conversation History": "对话历史",
   "Conversation": "对话",

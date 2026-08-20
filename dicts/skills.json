@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "source": "Antigravity 官方技能/插件描述（运行时动态加载）",
+    "tested_against": ["2.8.1"],
+    "last_verified": "2026-08-20"
+  },
   "Comprehensive guide and reference for the Antigravity Customization System. Use to explain how customizations work, their loading priority, discovery mechanisms, and to guide the creation of skills, rules, plugins, hooks, and MCP servers.": "Antigravity 自定义系统的综合指南与参考。用于说明自定义内容的工作原理、加载优先级、发现机制，并指导创建技能、规则、插件、钩子和 MCP 服务器。",
   "Provides instructions for installing and using the `android` CLI. The `android` command-line tool is a critical tool for Android development and helps you create new Android projects, run Android apps on devices, manage and interact with Android virtual devices (including screenshots and UI inspection), manage Android SDK components, look up official Android documentation, and discover and install official Android skills.": "提供安装和使用 `android` CLI 的说明。`android` 命令行工具是 Android 开发的关键工具，可帮助你创建新的 Android 项目、在设备上运行 Android 应用、管理并与 Android 虚拟设备交互（包括截图和 UI 检查）、管理 Android SDK 组件、查阅官方 Android 文档，以及发现并安装官方 Android 技能。",
   "Provides a comprehensive guide, quick reference, and sitemap for Google Antigravity (AGY), including the Antigravity CLI (agy), Antigravity 2.0, Antigravity IDE, Python SDK, slash commands, keybindings, and customizations (skills, rules, MCP, sidecars). Activate this skill when the user asks questions about how to use, configure, or customize Antigravity, AGY, the agy CLI, the Antigravity IDE, or Antigravity 2.0.": "提供 Google Antigravity (AGY) 的综合指南、快速参考和站点地图，涵盖 Antigravity CLI (agy)、Antigravity 2.0、Antigravity IDE、Python SDK、斜杠命令、快捷键和自定义内容（技能、规则、MCP、sidecar）。当用户询问如何使用、配置或自定义 Antigravity、AGY、agy CLI、Antigravity IDE 或 Antigravity 2.0 时，激活此技能。",
