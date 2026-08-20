@@ -10,6 +10,14 @@
     "target": "显示 $1/$2"
   },
   {
+    "source": "Show (\\d+) breakdowns",
+    "target": "显示 $1 项明细"
+  },
+  {
+    "source": "\\bPlan\\b",
+    "target": "套餐"
+  },
+  {
     "source": "See all \\((\\d+)\\)",
     "target": "查看全部 ($1)"
   },

@@ -10,6 +10,7 @@ const { readJson } = require("./asar-tools");
 function loadDicts(dictDir) {
   const dict = {};
   for (const f of fs.readdirSync(dictDir).filter((x) => x.endsWith(".json"))) {
+    if (f === "patterns.json") continue;
     const data = readJson(path.join(dictDir, f));
     if (Array.isArray(data)) continue;
     for (const k in data) {
