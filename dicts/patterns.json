@@ -6,6 +6,10 @@
   },
   "patterns": [
   {
+    "source": "showing (\\d+) of (\\d+)",
+    "target": "显示 $1/$2"
+  },
+  {
     "source": "See all \\((\\d+)\\)",
     "target": "查看全部 ($1)"
   },
