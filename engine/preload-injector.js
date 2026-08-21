@@ -38,16 +38,17 @@ function buildLocalizationJS(dict, patterns) {
     'using this MCP tool': '使用此 MCP 工具'
   };
   function escapeRegExp(s) { return s.replace(/[.*+?^\${}()|[\\]\\\\]/g, '\\\\$&'); }
+  var RE_CACHE = KEYS.map(function (key) {
+    var sw = /^[A-Za-z0-9]/.test(key);
+    var ew = /[A-Za-z0-9]$/.test(key);
+    var re = new RegExp((sw ? '(?<![A-Za-z0-9])' : '') + escapeRegExp(key) + (ew ? '(?![A-Za-z0-9])' : ''), 'g');
+    return [re, LOWER.get(key.toLowerCase())];
+  });
   function translate(value) {
     if (!value || typeof value !== 'string' || !/[A-Za-z]/.test(value)) return value;
     var next = value;
-    for (var i = 0; i < KEYS.length; i++) {
-      var key = KEYS[i];
-      var escaped = escapeRegExp(key);
-      var sw = /^[A-Za-z0-9]/.test(key);
-      var ew = /[A-Za-z0-9]$/.test(key);
-      var re = new RegExp((sw ? '(?<![A-Za-z0-9])' : '') + escaped + (ew ? '(?![A-Za-z0-9])' : ''), 'g');
-      next = next.replace(re, LOWER.get(key.toLowerCase()));
+    for (var i = 0; i < RE_CACHE.length; i++) {
+      next = next.replace(RE_CACHE[i][0], RE_CACHE[i][1]);
     }
     for (var j = 0; j < PATTERNS.length; j++) {
       var p = PATTERNS[j];
