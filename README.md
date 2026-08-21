@@ -19,9 +19,19 @@
 | 安装汉化 | 双击 `双击安装中文汉化.bat` |
 | 还原官方英文 | 双击 `双击卸载还原官方英文.bat` |
 | 手动安装 | `node localization_engine.js install` |
+| 检查并自动修复 | `node localization_engine.js ensure` |
 | 手动还原 | `node localization_engine.js uninstall` |
 | 查看状态 | `node localization_engine.js check` |
 | 覆盖率检测 | `node localization_engine.js check --coverage` |
+
+### 应对自动更新（推荐）
+
+Antigravity 自动更新会覆盖 `app.asar`，导致界面变回英文。推荐用启动器代替直接打开应用：
+
+- 双击项目根目录的 **`Antigravity中文版.cmd`** 启动——它会先运行 `ensure`：已注入则秒过，检测到汉化被更新覆盖则**自动重新注入**后再启动应用。
+- 可将桌面/开始菜单快捷方式的目标改为该启动器（图标可保留 Antigravity 原样），此后更新覆盖问题自动自愈。
+
+注意：更新发生在使用中时，当次会话仍是英文；关闭后从启动器重新打开即恢复。
 
 自定义安装目录：
 

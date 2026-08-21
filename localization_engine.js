@@ -10,6 +10,7 @@
  *
  * 用法：
  *   node localization_engine.js install        [安装目录]  汉化（默认 %LOCALAPPDATA%\Programs\antigravity）
+ *   node localization_engine.js ensure         [安装目录]  已注入则跳过，被更新覆盖后自动重装（供启动器调用）
  *   node localization_engine.js uninstall      [安装目录]  还原官方英文（恢复 app.asar.bak）
  *   node localization_engine.js check          [安装目录]  查看当前状态
  *   node localization_engine.js check --coverage            覆盖率报告
@@ -110,6 +111,17 @@ function check(appDir) {
   console.log(`备份文件: ${fs.existsSync(bakPath) ? "存在 (app.asar.bak)" : "无"}`);
 }
 
+function ensure(appDir) {
+  const asarPath = path.join(appDir, "resources", ASAR);
+  const localized = fs.readFileSync(asarPath, "utf8").includes("ANTIGRAVITY-ZH");
+  if (localized) {
+    log("汉化已注入，无需处理。");
+    return;
+  }
+  log("检测到汉化丢失（可能被应用更新覆盖），自动重新注入…");
+  install(appDir);
+}
+
 function coverage(appDir) {
   coverageRun(appDir, DICT_DIR, {
     appName: "Antigravity",
@@ -150,15 +162,17 @@ if (require.main === module) {
     argvDir = undefined;
   }
   try {
-  if (cmd === "install" || cmd === "uninstall" || cmd === "check") {
+  if (cmd === "install" || cmd === "ensure" || cmd === "uninstall" || cmd === "check") {
     const appDir = findDir(argvDir);
     if (cmd === "install") install(appDir);
+    else if (cmd === "ensure") ensure(appDir);
     else if (cmd === "uninstall") uninstall(appDir);
     else if (covMode) coverage(appDir);
     else check(appDir);
   } else {
     console.log("用法:");
     console.log("  node localization_engine.js install        [安装目录]  汉化");
+    console.log("  node localization_engine.js ensure         [安装目录]  已注入则跳过，丢失则自动重装");
     console.log("  node localization_engine.js uninstall      [安装目录]  还原官方英文");
     console.log("  node localization_engine.js check          [安装目录]  查看状态");
     console.log("  node localization_engine.js check --coverage            覆盖率报告");
